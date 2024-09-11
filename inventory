@@ -1,0 +1,5 @@
+[icinga2:children]
+icinga2_masters
+
+[icinga2_masters]
+tbauriedel-icinga   ansible_user=ubuntu

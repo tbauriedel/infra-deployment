@@ -1,0 +1,20 @@
+---
+- hosts: icinga2_masters
+  become: true
+  pre_tasks:
+    - ansible.builtin.include_tasks: meta_import-secrets.yml
+    - ansible.builtin.include_tasks: meta_add-hosts.yml
+  roles:
+    - tbauriedel.gographite.gocarbon
+    - tbauriedel.gographite.carbonapi
+    - geerlingguy.mysql
+    - icinga.icinga.repos
+    - icinga.icinga.icingadb_redis
+    - icinga.icinga.icingadb
+    - icinga.icinga.icinga2
+    - icinga.icinga.icingaweb2
+
+- hosts: icinga
+  become: true
+  roles:
+    - icinga.icinga.monitoring_plugins

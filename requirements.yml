@@ -1,0 +1,10 @@
+---
+roles:
+  - name: geerlingguy.mysql
+
+collections:
+  - name: icinga.icinga
+    source: https://github.com/Icinga/ansible-collection-icinga
+    type: git
+    version: '9a0e874800e093fcdc57e46b29c8e70326e9999e'
+  - name: tbauriedel.gographite

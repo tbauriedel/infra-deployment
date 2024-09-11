@@ -1,0 +1,19 @@
+---
+mysql_root_password: "{{ _secret_icinga_mysql_root_password }}"
+mysql_databases:
+  - name: icingadb
+  - name: icingaweb2
+  - name: director
+mysql_users:
+  - name: icingadb
+    host: "localhost"
+    password: "{{ _secret_icinga_mysql_icingadb_user }}"
+    priv: "icingadb.*:ALL"
+  - name: icingaweb2
+    host: "localhost"
+    password: "{{ _secret_icinga_mysql_icingaweb2_user }}"
+    priv: "icingaweb2.*:ALL"
+  - name: director
+    host: "localhost"
+    password: "{{ _secret_icinga_mysql_director_user }}"
+    priv: "director.*:ALL"

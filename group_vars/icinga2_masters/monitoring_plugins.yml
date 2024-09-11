@@ -1,0 +1,3 @@
+---
+icinga_monitoring_plugins_check_commands:
+  - 'all'
